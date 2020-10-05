@@ -79,3 +79,29 @@ let product = nums.reduce(1, { (productSoFar, value) -> Int in
     return productSoFar * value
 })
 print(product)
+
+// shorthand
+print(nums.reduce(1) {$0 * $1})
+
+let sentence = ["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"]
+print(sentence)
+
+let oSentence = sentence.filter({ (value) -> Bool in
+    return value.contains("o")
+})
+print(oSentence)
+
+// shorthand
+print(sentence.filter{$0.contains("o")})
+
+let capSentence = sentence.map({ (value) -> String in
+    return value.uppercased()
+})
+print(capSentence)
+
+// shorthand
+print(sentence.map{$0.uppercased()})
+
+
+
+print(sentence.reduce("") {$0 + String($1[$1.startIndex])})
